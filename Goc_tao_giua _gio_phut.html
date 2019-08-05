@@ -8,41 +8,19 @@
     <script>
         let a =prompt("Nhap gio");
         let b = prompt("Nhap phut");
-        if (a<12) {
-            if (b == 0) {
-                let c = 360 - a * 30;
-                if (c<0) {
-                    c=360 +c;
-                    alert(c);
-                }else {
-                    alert(c);
-                }
-            } else {
-                let c = b * 6 - a * 30 - b / 2;
-                if (c<0){
-                    c=360+c;
-                alert(c);
-                }else {
-                    alert(c);
-                }
+        if (a<12){
+            let c = b*6 - a *30 - b/2;
+            if (Math.abs(c)<180) {
+                alert(Math.abs(c));
+            }else {
+                alert(360-Math.abs(c));
             }
-        }else if (a<25) {
-            if (b == 0) {
-                let c = 360 - (a - 12) * 30;
-                if (c<0) {
-                    c= 360 +c;
-                    alert(c);
-                }else {
-                    alert(c);
-                }
-            } else {
-                let c = b * 6 - (a - 12) * 30 - b / 2;
-                if (c<0) {
-                    c=360+c;
-                    alert(c);
-                }else{
-                    alert(c);
-                }
+        }else if (a<25){
+            let c = b*6 - (a-12)*30 -b/2;
+            if (Math.abs(c)<180) {
+                alert(Math.abs(c));
+            }else {
+                alert(360-Math.abs(c));
             }
         }else {
             alert("Thoi gian khong dung");
