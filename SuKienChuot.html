@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <title>Su Kien Chuot</title>
 </head>
-<body onload="init()">
-<img onclick="rightArrow()" id="Ronaldo" src="ronaldo.jpg">
+<body>
+<form>
+    <img id="Ronaldo" src="ronaldo.jpg">
+    <p>ronaldo</p>
+    <input type="button" onclick="rightArrow()" value="Click me"/>
+</form>
 <script>
+    window.onload = init;
     let img = document.getElementById('Ronaldo');
+
+
     function init() {
         img.style.position = 'relative';
-        img.style.top = '150px';
+
         img.style.left = '0px';
-        img.style.width = '150px';
-        img.style.height = '200px';
     }
 
     function rightArrow() {
         img.style.left = parseInt(img.style.left) + 10 + 'px';
+
     }
 </script>
 </body>

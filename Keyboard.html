@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Keyboard</title>
+</head>
+<body onload="onLoad()">
+<img src="ronaldo.jpg" id="brazil" style="position: absolute; top: 150px; left: 150px; width: 160px; height: 200px;">
+<script>
+    function keyup() {
+        let img = document.getElementById('brazil');
+        img.style.top = parseInt(img.style.top) - 10 + 'px';
+    }
+
+    function keydown() {
+        let img = document.getElementById('brazil');
+        img.style.top = parseInt(img.style.top) + 10 + 'px';
+
+    }
+
+    function keyleft() {
+
+        let img = document.getElementById('brazil');
+        img.style.left = parseInt(img.style.left) - 10 + 'px';
+    }
+
+    function keyright() {
+        let img = document.getElementById('brazil');
+        img.style.left = parseInt(img.style.left) + 10 + 'px';
+    }
+
+    function keycode(number) {
+        switch (number.keyCode) {
+            case 37:
+                keyleft();
+                break;
+            case 39:
+                keyright();
+                break;
+            case 38:
+                keyup();
+                break;
+            case 40:
+                keydown();
+                break;
+        }
+
+    }
+
+    function onLoad() {
+        window.addEventListener('keydown', keycode);
+    }
+
+</script>
+</body>
+</html>
